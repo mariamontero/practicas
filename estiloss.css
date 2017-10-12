@@ -61,10 +61,12 @@ margin-left:85%;
 											menu principal  */
 #trans
 {
-	background-color:#06C;
-	position:absolute;
-	margin-top:-3%;
-	width:99%;
+	background-color: #06C;
+	position: absolute;
+	margin-top: -3%;
+	width: 99%;
+	left: -4px;
+	top: 47px;
 }
 
 #menu
@@ -440,13 +442,3 @@ color:#00F;
 	margin-top:-0.6%;
 	
 }
-
-
-
-
-
-
-
-
-
-
