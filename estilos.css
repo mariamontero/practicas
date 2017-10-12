@@ -1,0 +1,415 @@
+@charset "utf-8";
+/* CSS Document */
+
+body
+{
+	
+}
+#logo
+{
+	position:fixed;
+	margin-top:-2%;
+	margin-left:3%;
+}
+#iniseccion
+{
+	font-style:italic;
+	margin-left:75%;
+	text-transform:capitalize;
+	margin-top:1.5%;
+	position:fixed;
+	
+}
+#iniseccion a
+{
+	text-decoration:none;
+	color:black;
+	
+}
+
+#logocandado
+{
+	position:fixed;
+	margin-left:93.5%;
+	margin-top:1%;
+	
+}
+
+#busqinici
+{
+position:fixed;
+margin-left:81%;
+margin-top:6%;
+color:black;
+}
+#busqinici b input
+{
+	border-color:#06C;
+	border-style:dotted;
+	background:transparent;
+	
+}
+#lupa
+{
+	margin-left:100%;
+	margin-top:-25%;
+}
+
+/*												menu principal  */
+
+#menu
+{
+	border-radius:10px;
+	margin-top:2%;
+	margin-left:-50%;
+	font-family:Arial, Helvetica, sans-serif;
+	
+}
+
+#logoface
+{
+	position:fixed;
+	margin-left:87%;	
+}
+#logotwitter
+{
+	position:fixed;
+	margin-left:89.5%;
+	
+}
+#logobloger
+{
+	position:fixed;
+	margin-left:92%;
+	
+}
+#logoyoutube
+{
+	position:fixed;
+	margin-left:94.5%;
+	
+}
+
+*
+{
+	padding:1px;
+	margin:0px;
+}
+
+#menu ul, ol
+{
+	border-radius:10px;
+	list-style:none;
+}
+
+.nav
+{
+	margin-top:4%;
+	margin-left:14%;
+	
+}
+
+
+.nav li a
+{
+	border-radius:10px;
+	background:#06C;	
+	color:white;
+	text-decoration:none;
+	padding:5px 8px 5px 8px;
+	display:block;
+	
+}
+.nav > li 
+{
+	border-radius:10px;
+	float:left;
+}
+.nav li a:hover
+{
+	border-radius:10px;
+	background-color:black;
+}
+.nav li ul
+{
+	border-radius:10px;
+	min-width:140px;
+	position:absoluste;
+	display:none;
+}
+.nav li:hover > ul
+{
+	position:absolute;
+	border-radius:10px;
+	display:block;
+}
+.nav li ul li
+{
+	border-radius:10px;
+	position:relative;
+}
+.nav li ul li ul
+{
+	border-radius:10px;
+	position:absolute;
+	right:-140px;
+	top:0px;
+}
+
+#frameset
+{
+	margin-top:10%;
+	margin-ring:20%;
+	margin-left:20%;
+}
+
+/* 							frameset  					*/
+
+#parta
+{
+	margin-left:3%;
+	margin-right:3%;
+}
+
+
+/*						  								menu 1 						*/
+#menu1
+{
+	margin-top:2%;
+	margin-left:25%;
+	border:double;
+	margin-right:30%;
+}
+#menu1 legend
+{
+	background-color:#9C0;
+	margin-left:60%;
+}
+.aca select
+{
+	width:100%;
+	height:15%;
+}
+
+.centro
+{
+	margin-left:88%;
+}
+
+/*						  								menu 2						*/
+#menu2
+{
+	margin-top:2%;
+	margin-left:32%;
+	border:double;
+	margin-right:39%;
+}
+
+/*												menu solicitud*/
+#menusoli
+{
+margin-left:5%;
+width:28%;
+margin-top:5%;
+border:double;
+position:absolute;
+
+}
+#ingreso 
+{
+margin-left:35%;
+margin-top:12%;
+border:double;
+margin-right:35%;
+background:#BCB0F4;
+
+}			
+/*												 menu nuevo invent */
+												
+#menuinvent
+{
+margin-left:35%;
+margin-top:50px;
+border:double;
+margin-right:35%;
+background:#BCB0F4;
+}
+#selecingrinv
+{
+	margin-left:20%;
+	cursor:pointer;
+	width:42%;
+	height:3.5%;
+}
+												/* menu ingreso invent */
+												
+#menuinginvent
+{
+margin-left:35%;
+margin-top:10%;
+border:double;
+margin-right:35%;
+background:#BCB0F4;
+}
+.isquierd3
+{
+	width:10%;
+	
+}
+.isquierd2
+{
+	width:98%;
+	
+}
+#isquierda2
+{
+	width:42%;
+	float:left;
+}
+											/* menu modificar  */
+
+#menumodrepre										
+{
+	margin-left:30%;
+	margin-top:3%;
+	margin-right:30%;
+	border:double;
+}
+
+/*  									menu proveedor     */
+
+#menproveedores
+{
+	margin-top:2%;
+	margin-left:32%;
+	border:double;
+	margin-right:39%;
+}
+
+/*  									 menu seccion inicion     */
+											
+
+.iniciousu
+{
+	font-style:italic;
+	margin-left:28%;
+	border-style:inset;
+	margin-top:15%;
+	margin-right:28%;
+}
+.iniciousu b
+{
+	font-style:italic;
+}
+.iniciousu a
+{
+	text-decoration:none;
+	
+}
+.iniciousu input:hover
+{
+	cursor:pointer;
+	background:#CFF;
+}
+.iniciousu b:hover
+{
+	color:#00F;
+	
+}
+#iniciomsj
+{
+	font-style:italic;
+}
+#olvido
+{
+	cursor:pointer;
+	
+
+}
+/*  								menu alimentos    				*/
+#botonesagregali
+{
+	margin-top:3%;
+	margin-left:40%;
+	
+}
+
+#exitentealim
+{
+	margin-top:2%;
+	margin-left:32%;
+	border:double;
+	margin-right:39%;
+	
+}
+#inexitentealim
+{
+	margin-top:2%;
+	margin-left:32%;
+	border:double;
+	margin-right:39%;
+	
+}
+#veinvent
+{
+	position:fixed;
+	margin-left:2%;
+}
+#acortsele
+{
+	
+	max-width:70%;
+	
+}
+
+#detainv
+{	
+	margin-left:50%;
+	margin-top:-0.6%;
+	
+}
+
+
+/*									 					menu demanda   */
+
+#menuinexisente
+{
+	margin-left:55%;
+	width:28%;
+	margin-top:5%;
+	border:double;
+	position:fixed;
+	
+}
+
+
+#menuexisente
+{
+	margin-left:55%;
+	width:28%;
+	margin-top:5%;
+	border:double;
+	position:fixed;
+}
+
+	
+
+
+
+/*											 ver solicitud               */
+
+#versolici
+{
+	margin-top:3%;
+}
+
+/*											 salida solicitud               */
+
+#salidsoli
+{
+	background-color:red;
+	margin-left:30%;
+	margin-right:30%; 
+	border:double;
+	
+}

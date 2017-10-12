@@ -1,0 +1,342 @@
+-- phpMyAdmin SQL Dump
+-- version 2.10.3
+-- http://www.phpmyadmin.net
+-- 
+-- Servidor: localhost
+-- Tiempo de generación: 27-09-2014 a las 01:07:40
+-- Versión del servidor: 5.0.51
+-- Versión de PHP: 5.2.6
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+-- 
+-- Base de datos: `funfeco`
+-- 
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `auditoria`
+-- 
+
+CREATE TABLE `auditoria` (
+  `todo` int(12) NOT NULL auto_increment,
+  KEY `todo` (`todo`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- 
+-- Volcar la base de datos para la tabla `auditoria`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `beneficiario`
+-- 
+
+CREATE TABLE `beneficiario` (
+  `benefi_idr` int(2) NOT NULL,
+  `benefi_nom` varchar(18) NOT NULL,
+  `benefi_apell` varchar(20) NOT NULL,
+  `benefi_nacidad` varchar(1) NOT NULL,
+  `benefi_ci` varchar(8) default NULL,
+  `benefi_diagtco` varchar(30) NOT NULL,
+  `benefi_sexo` text NOT NULL,
+  `benefi_fnacimiento` varchar(10) NOT NULL,
+  `benefi_id` int(3) NOT NULL auto_increment,
+  `benefi_status` varchar(18) NOT NULL,
+  `benefi_fecha_reg` date NOT NULL,
+  PRIMARY KEY  (`benefi_id`),
+  KEY `benefi_fecha_reg` (`benefi_fecha_reg`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26 ;
+
+-- 
+-- Volcar la base de datos para la tabla `beneficiario`
+-- 
+
+INSERT INTO `beneficiario` VALUES (48, 'freedy orlando', 'rodriguez jaimes', 'V', 'no posee', 'dolor de rodilla', 'Masculino', '23/02/2013', 22, 'evaluacion', '2014-06-24');
+INSERT INTO `beneficiario` VALUES (48, 'lori', 'fuentes escalona', 'V', '20423290', 'oncologico', 'Femenino', '23/02/2012', 23, 'evaluacion', '2014-06-24');
+INSERT INTO `beneficiario` VALUES (52, 'maria', 'fuentes', 'V', 'no posee', 'nada :)', 'Femenino', '2012-02-03', 24, 'porentregar', '2014-07-02');
+INSERT INTO `beneficiario` VALUES (53, 'karo', 'rodriguez', 'V', 'no posee', 'anemia', 'Femenino', '2000-09-06', 25, 'evaluacion', '2014-09-25');
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `demandas`
+-- 
+
+CREATE TABLE `demandas` (
+  `demand_id` int(4) NOT NULL auto_increment,
+  `demand_tipo` varchar(12) NOT NULL,
+  `demand_nombre` varchar(15) NOT NULL,
+  `demand_descrip` varchar(20) NOT NULL,
+  `demand_canti` int(5) NOT NULL,
+  PRIMARY KEY  (`demand_id`),
+  KEY `demand_tipo` (`demand_tipo`,`demand_nombre`,`demand_descrip`,`demand_canti`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26 ;
+
+-- 
+-- Volcar la base de datos para la tabla `demandas`
+-- 
+
+INSERT INTO `demandas` VALUES (20, 'medicamentos', 'atamel', '250 mg', 2);
+INSERT INTO `demandas` VALUES (21, 'medicamentos', 'ibuprofeno', 'ampollasx', 1);
+INSERT INTO `demandas` VALUES (22, 'enceres', 'franelas', 'talla20', 1);
+INSERT INTO `demandas` VALUES (23, 'medicamentos', 'metronidazol', '500mg', 2);
+INSERT INTO `demandas` VALUES (24, 'medicamentos', 'teragrip', 'sobre noche dia', 1);
+INSERT INTO `demandas` VALUES (25, 'enceres', 'cobija', 'termica', 1);
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `historial`
+-- 
+
+CREATE TABLE `historial` (
+  `todo` varchar(1) NOT NULL,
+  KEY `todo` (`todo`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- 
+-- Volcar la base de datos para la tabla `historial`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `inventario`
+-- 
+
+CREATE TABLE `inventario` (
+  `inven_id` int(4) NOT NULL auto_increment,
+  `inven_tipo` varchar(12) character set utf8 collate utf8_spanish2_ci NOT NULL,
+  `inven_nom` varchar(15) character set utf8 collate utf8_spanish2_ci NOT NULL,
+  `inven_canti` int(5) NOT NULL,
+  `inven_descrip` varchar(20) character set utf8 collate utf8_spanish2_ci NOT NULL,
+  PRIMARY KEY  (`inven_id`),
+  KEY `inven_tipo` (`inven_tipo`,`inven_nom`,`inven_descrip`),
+  KEY `cantidad` (`inven_canti`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=49 ;
+
+-- 
+-- Volcar la base de datos para la tabla `inventario`
+-- 
+
+INSERT INTO `inventario` VALUES (34, 'medicamentos', 'atamel', 349, '250 mg');
+INSERT INTO `inventario` VALUES (35, 'medicamentos', 'atamel', 29, 'anpollas250mm');
+INSERT INTO `inventario` VALUES (36, 'enceres', 'zapatos', 20, 'talla35');
+INSERT INTO `inventario` VALUES (37, 'alimentos', 'pollo', 49, 'criollo');
+INSERT INTO `inventario` VALUES (38, 'medicamentos', 'paracetamol', 20, 'caja20tabletas100mg');
+INSERT INTO `inventario` VALUES (39, 'alimentos', 'atun', 150, 'eveba grande');
+INSERT INTO `inventario` VALUES (40, 'enceres', 'silla de ruedas', 25, 'adulto');
+INSERT INTO `inventario` VALUES (41, 'enceres', 'muletas', 27, 'adulto');
+INSERT INTO `inventario` VALUES (42, 'alimentos', 'pollo', 20, 'blanco');
+INSERT INTO `inventario` VALUES (43, 'enceres', 'franelas', 30, 'talla20');
+INSERT INTO `inventario` VALUES (44, 'enceres', 'termos', 100, '1.50litros');
+INSERT INTO `inventario` VALUES (45, 'alimentos', 'arroz', 20, '1kg');
+INSERT INTO `inventario` VALUES (46, 'alimentos', 'arroz', 0, '1.5kg');
+INSERT INTO `inventario` VALUES (47, 'medicamentos', 'teragrip', 30, 'sobre noche dia');
+INSERT INTO `inventario` VALUES (48, 'alimento', 'cereal', 3, 'cereal');
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `invent_ingreso`
+-- 
+
+CREATE TABLE `invent_ingreso` (
+  `ingres_id` int(4) NOT NULL auto_increment,
+  `ingres_id_art` int(4) NOT NULL,
+  `ingres_fech_i` date NOT NULL,
+  `ingres_fech_v` varchar(10) NOT NULL,
+  `ingres_id_prov` int(4) NOT NULL,
+  `ingres_canti` int(4) NOT NULL,
+  PRIMARY KEY  (`ingres_id`),
+  KEY `ingres_id_art` (`ingres_id_art`,`ingres_fech_i`,`ingres_fech_v`,`ingres_id_prov`),
+  KEY `ingres_canti` (`ingres_canti`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=149 ;
+
+-- 
+-- Volcar la base de datos para la tabla `invent_ingreso`
+-- 
+
+INSERT INTO `invent_ingreso` VALUES (114, 34, '2014-08-06', '2014-08-06', 8, 2);
+INSERT INTO `invent_ingreso` VALUES (80, 35, '2014-07-24', '2014-07-24', 8, 27);
+INSERT INTO `invent_ingreso` VALUES (81, 36, '2014-07-24', 'no posee', 8, 20);
+INSERT INTO `invent_ingreso` VALUES (82, 37, '2014-07-24', '2014-07-31', 8, 49);
+INSERT INTO `invent_ingreso` VALUES (83, 38, '2014-07-24', '2014-07-24', 8, 20);
+INSERT INTO `invent_ingreso` VALUES (84, 39, '2014-07-24', '2015-02-04', 8, 100);
+INSERT INTO `invent_ingreso` VALUES (85, 39, '2014-07-24', '2015-10-14', 10, 50);
+INSERT INTO `invent_ingreso` VALUES (86, 40, '2014-07-24', 'no posee', 11, 25);
+INSERT INTO `invent_ingreso` VALUES (87, 41, '2014-07-24', 'no posee', 11, 15);
+INSERT INTO `invent_ingreso` VALUES (88, 42, '2014-07-24', '2014-07-31', 8, 20);
+INSERT INTO `invent_ingreso` VALUES (89, 43, '2014-07-24', 'no posee', 8, 20);
+INSERT INTO `invent_ingreso` VALUES (90, 44, '2014-07-24', 'no posee', 11, 100);
+INSERT INTO `invent_ingreso` VALUES (91, 43, '2014-07-24', 'no posee', 8, 10);
+INSERT INTO `invent_ingreso` VALUES (93, 34, '2014-07-24', '2014-07-24', 8, 7);
+INSERT INTO `invent_ingreso` VALUES (94, 41, '2014-07-24', 'no posee', 8, 10);
+INSERT INTO `invent_ingreso` VALUES (95, 41, '2014-07-24', 'no posee', 8, 2);
+INSERT INTO `invent_ingreso` VALUES (96, 45, '2014-07-24', '2015-06-10', 8, 20);
+INSERT INTO `invent_ingreso` VALUES (124, 34, '2014-08-06', '2014-08-06', 8, 1);
+INSERT INTO `invent_ingreso` VALUES (142, 34, '2014-08-07', '2014-08-07', 8, 23);
+INSERT INTO `invent_ingreso` VALUES (143, 34, '2014-08-07', '2014-08-07', 8, 303);
+INSERT INTO `invent_ingreso` VALUES (144, 47, '2014-08-07', '2015-08-07', 8, 30);
+INSERT INTO `invent_ingreso` VALUES (145, 34, '2014-08-07', '2015-08-07', 11, 10);
+INSERT INTO `invent_ingreso` VALUES (146, 34, '0000-00-00', '2014-08-07', 8, 2);
+INSERT INTO `invent_ingreso` VALUES (147, 34, '0000-00-00', '2014-08-07', 8, 1);
+INSERT INTO `invent_ingreso` VALUES (113, 35, '2014-08-05', '2014-08-05', 8, 2);
+INSERT INTO `invent_ingreso` VALUES (148, 48, '2014-09-25', '2014-10-10', 9, 3);
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `proveedores`
+-- 
+
+CREATE TABLE `proveedores` (
+  `prov_id` int(5) NOT NULL auto_increment,
+  `prov_direcc` varchar(100) character set utf8 collate utf8_spanish2_ci NOT NULL,
+  `prov_cod_tlf` int(4) NOT NULL,
+  `prov_tlf` varchar(7) NOT NULL,
+  `prov_nom` varchar(30) NOT NULL,
+  `prov_rif` varchar(12) NOT NULL,
+  `prov_correo` varchar(35) NOT NULL,
+  `prov_fecha` date NOT NULL,
+  PRIMARY KEY  (`prov_id`),
+  KEY `entreg` (`prov_direcc`,`prov_tlf`,`prov_nom`),
+  KEY `rif` (`prov_rif`),
+  KEY `correo` (`prov_correo`),
+  KEY `fecha` (`prov_fecha`),
+  KEY `prov_cod_tlf` (`prov_cod_tlf`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
+
+-- 
+-- Volcar la base de datos para la tabla `proveedores`
+-- 
+
+INSERT INTO `proveedores` VALUES (8, 'chino', 0, 'elchino', 'centro san cris', '04247774895', 'v-194892394', '2014-07-02');
+INSERT INTO `proveedores` VALUES (9, 'migue', 0, 'miguext', 'cordero carrera', '02763393458', 'v-20120304-0', '2014-07-02');
+INSERT INTO `proveedores` VALUES (10, 'cordero carrera prinipalsector campo deportivox', 274, '0298494', 'arabesx', 'v-1039482-4', 'elarabe3d@hotma', '2014-07-02');
+INSERT INTO `proveedores` VALUES (11, ' frente al sabil', 276, '2049021', 'loteria del tachira', 'v-1539482-2', 'loteria@gmail.c', '2014-07-24');
+INSERT INTO `proveedores` VALUES (12, ' margarita', 295, '2626377', 'fscve', 'j276543', 'fscve@gmail.com', '2014-09-25');
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `referencias`
+-- 
+
+CREATE TABLE `referencias` (
+  `refe_id` int(4) NOT NULL auto_increment,
+  `refe_nom` varchar(18) character set utf8 collate utf8_spanish_ci NOT NULL,
+  `refe_apell` varchar(20) character set utf8 collate utf8_spanish2_ci NOT NULL,
+  `refe_ci` int(8) NOT NULL,
+  `refecodcasa` varchar(4) NOT NULL,
+  `refe_tlf` int(7) default NULL,
+  `refe_nacidad` varchar(1) character set utf8 collate utf8_spanish2_ci NOT NULL,
+  `refe_cod_cel` int(4) default NULL,
+  `refe_movil` int(7) default NULL,
+  `refe_direc` varchar(100) character set utf8 collate utf8_spanish2_ci NOT NULL,
+  PRIMARY KEY  (`refe_id`),
+  KEY `refe_nom` (`refe_nom`,`refe_apell`,`refe_ci`,`refe_tlf`,`refe_nacidad`,`refe_cod_cel`,`refe_movil`,`refe_direc`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+
+-- 
+-- Volcar la base de datos para la tabla `referencias`
+-- 
+
+INSERT INTO `referencias` VALUES (2, 'pedro josex', 'fuentes zambranox', 60393041, '', 2020202020, 'E', 412, 7774957, 'la hermita carrera 1 calle 2 frene a la g');
+INSERT INTO `referencias` VALUES (3, 'betty fuentes', 'rojas', 20494021, '', 242039420, 'V', 412, 2940201, 'la herita calle 3');
+INSERT INTO `referencias` VALUES (4, 'roxy', 'mora', 21304922, '', 0, 'V', 412, 2039593, 'por alla lejos');
+INSERT INTO `referencias` VALUES (5, 'roselin', 'mora', 21417596, '', 234567, 'V', 412, 6543246, 'sedrftgyhj');
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `representante`
+-- 
+
+CREATE TABLE `representante` (
+  `repre_id` int(3) NOT NULL auto_increment,
+  `repre_nom` varchar(18) default NULL,
+  `repre_apell` varchar(20) default NULL,
+  `repre_nacidad` varchar(1) character set ucs2 default NULL,
+  `repre_ci` int(8) default NULL,
+  `repre_dirc` varchar(100) default NULL,
+  `codcasa` varchar(4) NOT NULL,
+  `repre_tlf` varchar(7) default NULL,
+  `repre_cod_cel` int(4) NOT NULL,
+  `repre_movil` int(7) NOT NULL,
+  `repre_num_hijos` int(2) default NULL,
+  `repre_edo_civil` varchar(14) character set ucs2 NOT NULL,
+  `repre_tbja` varchar(2) NOT NULL,
+  `repre_vivda` varchar(2) NOT NULL,
+  `repre_fecha_reg` date NOT NULL,
+  `repre_id_refe` int(4) NOT NULL,
+  PRIMARY KEY  (`repre_id`),
+  KEY `repre_cod_cel` (`repre_cod_cel`,`repre_movil`),
+  KEY `repre_id_refe` (`repre_id_refe`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=54 ;
+
+-- 
+-- Volcar la base de datos para la tabla `representante`
+-- 
+
+INSERT INTO `representante` VALUES (48, 'freedy orlando', 'fuentes zambrano', 'V', 6092764, 'cordero la garcia cale 3 #1-195', '', '0276773', 426, 7774957, 4, 'soltero', 'Si', 'Si', '2014-06-24', 2);
+INSERT INTO `representante` VALUES (50, 'freedy orlando', 'fuentes zambrano', 'V', 6092763, 'cordero la garcia cale 3 #1-195', '', '0276773', 412, 7774957, 4, 'casado', 'Si', 'Si', '2014-06-24', 2);
+INSERT INTO `representante` VALUES (51, 'orlando david', 'fentes escalona', 'V', 16368004, 'cordero la garcia cale 3 #1-195', '', '0424309', 414, 9309523, 1, 'soltero', 'Si', 'Si', '2014-06-24', 3);
+INSERT INTO `representante` VALUES (52, 'erick', 'fuentes', 'V', 20423290, 'cordero la garcia', '', '875764', 412, 662413, 1, 'casado', 'Si', 'Si', '2014-07-02', 4);
+INSERT INTO `representante` VALUES (53, 'diana', 'rodriguez', 'V', 19925202, 'urb santa rosa', '', '0276 34', 412, 6466101, 1, 'soltero', 'Si', 'Si', '2014-09-25', 5);
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `solicitudes`
+-- 
+
+CREATE TABLE `solicitudes` (
+  `solic_id` int(3) NOT NULL auto_increment,
+  `solic_id_b` int(4) NOT NULL,
+  `solic_id_demand` varchar(4) NOT NULL,
+  `solic_fecha` date NOT NULL,
+  `solic_estado` varchar(9) character set utf8 collate utf8_spanish2_ci NOT NULL,
+  PRIMARY KEY  (`solic_id`),
+  KEY `solic_estado` (`solic_estado`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=52 ;
+
+-- 
+-- Volcar la base de datos para la tabla `solicitudes`
+-- 
+
+INSERT INTO `solicitudes` VALUES (44, 24, '20', '2014-08-10', 'activo');
+INSERT INTO `solicitudes` VALUES (45, 24, '21', '2014-08-10', 'activo');
+INSERT INTO `solicitudes` VALUES (46, 24, '22', '2014-08-10', 'activo');
+INSERT INTO `solicitudes` VALUES (47, 23, '23', '2014-08-10', 'activo');
+INSERT INTO `solicitudes` VALUES (48, 23, '23', '2014-08-10', 'activo');
+INSERT INTO `solicitudes` VALUES (49, 23, '20', '2014-08-10', 'activo');
+INSERT INTO `solicitudes` VALUES (50, 25, '24', '2014-09-25', 'activo');
+INSERT INTO `solicitudes` VALUES (51, 25, '25', '2014-09-25', 'activo');
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `usuarios`
+-- 
+
+CREATE TABLE `usuarios` (
+  `username` varchar(8) NOT NULL,
+  `password` varchar(10) default NULL,
+  `nivel` varchar(13) NOT NULL,
+  `question` text NOT NULL,
+  `answer` text NOT NULL,
+  PRIMARY KEY  (`username`),
+  KEY `clave` (`password`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- 
+-- Volcar la base de datos para la tabla `usuarios`
+-- 
+
+INSERT INTO `usuarios` VALUES ('karo', 'karo', 'administr', 'Nombre de tu Profesora Favorita', 'erick');
