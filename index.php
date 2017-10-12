@@ -111,6 +111,5 @@ echo " <div id='iniseccion'><b>".$_SESSION['s_username']."</b> <a href=\"./pagin
 <iframe name="prt1.1"  width="100%"  scrolling="auto" frameborder="1" height="65%">
 </iframe>
 </div>
-<div id="logoface"><a href="https://www.facebook.com/pages/Fundacion-Fe-y-Comunidad-FUNFECO/198580419061"><img src="img/faceboock(1).jpg"></a> </div><div id="logotwitter"> <img src="img/twiter(1).jpg"> </div><div id="logoyoutube"> <img src="img/youtube(1).jpg"> </div><div id="logobloger"> <img src="img/blogspot(1).jpg"> </div>
 </body>
 </html>
